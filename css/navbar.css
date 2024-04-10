@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+a{
+  text-decoration: none;
+}
+:root {
+  --Dark-Violet: hsl(256, 26%, 20%);
+  --Grayish-Blue: hsl(216, 30%, 68%);
+  --Very-Dark-Violet: hsl(270, 9%, 17%);
+  --Dark-Grayish-Violet: hsl(273, 4%, 51%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+html  {
+  font-size: 1em;
+}
+
+
+
+header {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 85px;
+}
+
+header a {
+  padding: 25px;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+}
+
+header nav.active {
+  display: block;
+}
+
+nav ul li:hover:not(.nav-btn-link) {
+  color: #000;
+  text-decoration: underline;
+}
+
+@keyframes loadMenu {
+  0% {
+    transform: translateY(-55px);
+  }
+
+  25% {
+    transform: translateY(5px);
+  }
+
+  50% {
+    transform: translateY(25px);
+  }
+
+
+  100% {
+    transform: translateY(0px);
+  }
+
+}
+
+ li {
+  cursor: pointer;
+}
+
+li:hover {
+  color: var(--Grayish-Blue);
+  transition: 0.5s ease-in-out;
+}
+
+header nav.active ul li {
+  animation: loadMenu 0.5s ease-in;
+}
+
+header ul li {
+  padding: 0 20px;
+  text-transform: uppercase;
+  color: var(--Dark-Grayish-Violet);
+}
+
+.nav-btn-link > a{
+  border: 1px solid  hsl(273, 4%, 51%);
+  padding: 10px;
+  color:  hsl(273, 4%, 51%);
+}
+
+.nav-btn-link > a:hover{
+  background-color: black;
+  color: hsl(273, 4%, 51%);
+  transition: 0.5s ease;
+}
+
+
+
+header .toggle-menu .menu {
+  display: none;
+}
+
+
+header .toggle-menu .close-menu {
+  display: none;
+}
+
+
+
+@media (max-width:900px) {
+
+  header {
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: var(--Very-Light-Gray);
+  }
+
+  header nav.active {
+    z-index: 100;
+    background-color: var(--Dark-Violet);
+    background-image: url(/images/bg-pattern-mobile-nav.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 38%;
+    background-position: bottom left;
+  }
+
+
+
+  header nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
+
+  .nav-btn-link > a:hover{
+    background-color: #fff;
+    color: hsl(273, 4%, 51%);
+    transition: 0.5s ease;
+  }
+  
+
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    margin-top: 1.3em;
+  }
+
+  nav ul li {
+    padding: 29px 0;
+    font-size: 1.5em;
+  }
+
+  header .toggle-menu .active.menu {
+    display: block;
+    margin-right: 25px;
+  }
+
+  header .toggle-menu .active.close-menu {
+    display: block;
+    margin-right: 25px;
+  }
+
+  header ul li, ul li a {
+    color: #fff;
+  }
+
+
+  
+
+  
+
+}
